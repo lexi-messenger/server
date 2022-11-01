@@ -9,13 +9,14 @@ wss.on('connection', (ws) => {
     ws.on('message', (data) => {
         console.log('received: %s', data);
         data = JSON.parse(data.toString());
-        if(data?.id < 0) {
+        if(data.type == "user") {
             connections++;
             const id = {
                 type: "data",
                 id: connections,
             }
             ws.send(JSON.stringify(id));
+            console.log("user identification");
         }
         for(const connection of wss.clients) {
             if(connection != ws){
