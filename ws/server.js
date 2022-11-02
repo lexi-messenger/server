@@ -22,6 +22,9 @@ wss.on('connection', (ws) => {
             if(connection != ws){
                 const message = {
                     type: "message",
+                    userSent: data.userSent,
+                    userReceiving: data.userReceiving,
+                    timeSent: Date.now(),
                     message: data.message,
                 }
                 connection.send(JSON.stringify(message));

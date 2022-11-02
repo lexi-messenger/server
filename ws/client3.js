@@ -15,7 +15,7 @@ ws.on('open', () => {
         id: userSent's id
     */
 
-    ws.send(JSON.stringify({type: "message", userSent:"Philipp", timeSent: Date.now() - 10000, inOrOutbound: "out", userReceiving:"Lewis", id:0, message: 'Yooo! Hey Lewis! Wie geht es dir???'}));
+    ws.send(JSON.stringify({type: "message", userSent:"Philipp", timeSent: Date.now() - 10000, inOrOutbound: "out", userReceiving:"Lewis", id:0, message: 'Mir geht es gut, diese App ist ziemlich cool'}));
 });
 
 ws.on('message', (data) => {
